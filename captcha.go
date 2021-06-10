@@ -88,6 +88,11 @@ func NewLen(length int) (id string) {
 	return
 }
 
+func NewLenById(length int, id string) {
+	globalStore.Set(id, RandomDigits(length))
+	return
+}
+
 // Reload generates and remembers new digits for the given captcha id.  This
 // function returns false if there is no captcha with the given id.
 //
